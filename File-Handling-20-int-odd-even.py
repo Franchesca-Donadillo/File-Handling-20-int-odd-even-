@@ -18,3 +18,5 @@ with open("numbers.txt", "r") as file_numbers, open("even.txt", "w") as file_eve
         elif num % 2 == 1:
             file_odd.write(f"Odd #{i}: " + str(num) + "\n")
             i += 0
+
+print("\nCongratulations!\nOdd and even numbers are now in their respective text file. Check it out!\n")
