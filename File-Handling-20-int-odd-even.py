@@ -5,7 +5,13 @@
 # import pyfiglet
 import pyfiglet
 
+# import rich for color
+from rich.theme import Theme
+from rich.console import Console
 
+# generate theme
+theme_num = Theme({"congrats": "bold cyan", "checkout" : "bold italic green"})
+console_num = Console(theme = theme_num)
 
 # read a text file named numbers.txt
 # create a text file named even.txt
@@ -25,5 +31,5 @@ with open("numbers.txt", "r") as file_numbers, open("even.txt", "w") as file_eve
             i += 0
 
 congrats = pyfiglet.figlet_format("Congrats! ", font = "slant")
-print(congrats)
-print("\nOdd and even numbers are now in their respective text file. Check it out!\n")
+console_num.print(congrats, style = "congrats")
+console_num.print("\n--Odd and even numbers are now in their respective text file. Check it out!--\n", style = "checkout")
